@@ -1,0 +1,179 @@
+//problem 1 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cin>>age;
+    if(age>=18){
+        cout<<"eligible for vote";
+    }
+    
+
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cin>>age;
+    if(age>=18){
+        cout<<"eligible for vote";
+    }else{
+        cout<<"not eligible for vote";
+    }
+    
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cin>>age;
+    if(age>=18){
+        if(age>=100){
+            cout<<"Eligible for vote (we are super senior citizen)";
+        }else{
+            cout<<"eligible for vote";
+        }
+    }else{
+       if(age<0){
+           cout<<"Enter a valid age number";
+       }else{
+           cout<<"Not eligible for vote";
+       }
+    }
+    
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a,b;
+    int max_number;
+    
+    cin>>a>>b;
+    max_number = (a>b)?a:b;
+    cout<<max_number;
+    
+
+    return 0;
+}
+
+
+//print 1 to n and avoid those number which are divisible by int32_t
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        if(i%3 == 0){
+            continue;
+        }
+        cout<<i<<"";
+    }
+    cout<<"\n";
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    int sum = 0;
+    while(true){
+        cin>>n;
+        if(n<0){
+            break;
+        }
+        sum = sum + n;
+    }
+    cout<<sum;
+
+    return 0;
+
+
+
+//smart lighting system
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    string dayOrNight;
+    bool motionDetected;
+    
+    cout<<"is it day or night:";
+    cin>>dayOrNight;
+    
+    cout<<"is motion detected?(1 for yes, 0 for no)";
+    cin>>motionDetected;
+    
+    if(dayOrNight == "Night" || dayOrNight == "night"){
+        if(motionDetected){
+            cout << "Turn on the LED light with 100% brightness..";
+        } else {
+            cout << "Turn on the LED light with only 10% of brightness..";
+        }
+    } else {
+        cout << "Turn off the Lights..";
+    }
+    return 0;
+}
+
+//problem 8 - customer support ivr system
+// for support
+// for billing
+// technical isuues
+// talk to the agent
+#include <iostream>
+using namespace std;
+
+int main(){
+    int choice;
+    cin >> choice;
+    switch(choice){
+        case 1:
+        cout <<" Trasferring call to the customer support...";
+        break;
+        
+        case 2:
+        cout <<" trasferring call to billing and accounts...";
+         break;
+         
+         case 3:
+         cout <<" connecting to technical help desk...";
+         break;
+         
+         case 4:
+         cout <<"connecting call to the agent...";
+         break;
+         
+         default:
+         cout<<"Invalid selection, Enter a valid number...";
+    }
+    
+    
+
+    return 0;
+}
