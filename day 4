@@ -1,0 +1,157 @@
+// problem 1 
+//print 1 to 10,10 number of times
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    //numcer of times to print the pattern
+    for(int i = 1; i<=10;i++){
+        //this defines what to print in the pattern
+        for(int j = 1;j<=10;j++){
+            cout<<j<<" ";
+        }
+        cout<<"\n";
+    }  
+    return 0;
+}
+
+
+// problem 2
+//print a solid square
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    //numcer of times to print the pattern
+    for(int i = 1; i<=10;i++){
+        //this defines what to print in the pattern
+        for(int j = 1;j<=10;j++){
+            cout<<"*  ";
+        }
+        cout<<"\n";
+    }
+    
+    return 0;
+}
+
+// problem 3
+//print a right angled  triangle
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    //numcer of times to print the pattern
+    for(int i = 1; i<=n;i++){
+        //this defines what to print in the pattern
+        for(int j = 1;j<=i;j++){
+            cout<<"* ";
+        }
+        cout<<"\n";
+    }
+    
+    return 0;
+}
+
+// problem 4
+//print a mirror of right angled  triangle
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    //numcer of times or number of rows
+    for(int i = 1; i<=n;i++){
+        //number of spaces logic is here
+        for(int j = n-i;j>=1;j--){
+            cout<<" ";
+            
+        }
+        for(int k =1; k<=i;k++){
+            cout<<"*";
+        }
+        
+        cout<<"\n";
+    }
+
+// problem 6
+//print a hollow square 
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    
+    //number of times or number of rows
+    for(int i = 1; i<=n;i++){
+        
+        for(int j = 1;j<=n;j++){
+            cout<<" ";
+            if((i==1)|| (j==1)||(i==n)||(j==n)){
+            cout<<"*";
+            }else{
+                cout<<" ";
+            }   
+        }cout<<"\n";
+    }
+    return 0;
+}
+    
+    return 0;
+}
+
+// problem 5
+//print a rectangle
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int row, col;
+    cin>>row;
+    cin>>col;
+    //numcer of times or number of rows
+    for(int i = 1; i<=row;i++){
+        //number of spaces logic is here
+        for(int j = 1;j<=col;j++){
+            cout<<"*";
+            
+        }cout<<"\n";
+    }
+    return 0;
+}
+
+
+// problem 7
+//print a pyramid pattern 
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+
+    for(int i = 1; i<=n;i++){
+        for(int j = n-i;j>=1;j--){
+            cout<<" ";
+            
+        }
+        for(int k =1; k<=i;k++){
+            cout<<" *";
+        }
+        
+        cout<<"\n";
+    }
+    return 0;
+}
