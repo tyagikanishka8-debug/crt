@@ -1,0 +1,178 @@
+//PROBLEM 1 
+//Pattern printing upper roght angle triangle and its opposite
+#include <iostream>
+using namespace std;
+int main(){
+int n;
+cin>>n;
+
+//print upper right angle triangle
+for(int i=1;i<=n;i++){
+       for(int j=1;j<=i;j++){
+           cout<<"*";
+       } cout<<endl;
+    }
+    //print lower triangle
+for(int k =n-1;k>=1;k--){
+    for(int t=1;t<=k;t++){
+        cout<<"*";
+    }cout<<endl;
+}    
+
+    return 0;
+}
+
+//PROBLEM 2 
+// function declaration and initialization
+
+#include <iostream>
+using namespace std;
+
+void printMessage(){
+    cout<<"Hi we are learning functions ";
+}
+int main(){
+    printMessage();
+
+    return 0;
+}
+
+//PROBLEM 3 
+// making a function with argument and return type
+
+#include <iostream>
+using namespace std;
+
+int area(int a, int b){
+    return a*b;
+}
+int main(){
+    int length = 10;
+    int width = 5;
+    int areaOfRectangle = area(length,width);
+    cout<<areaOfRectangle;
+
+    return 0;
+}
+
+//PROBLEM 4
+// types of functions
+//4.1 - no argument and no return
+
+#include <iostream>
+using namespace std;
+
+void DoorBell(){
+    cout<<"Ting Tong";
+}
+
+int main(){
+    DoorBell();
+    return 0;
+}
+
+//4.2 Argument , No return types
+#include <iostream>
+using namespace std;
+
+void sendText(string message){
+    cout<< message;
+}
+int main(){
+    sendText("BJP won");
+    return 0;
+}
+
+//4.3 No argument,return type
+#include <iostream>
+using namespace std;
+ int area(int a, int b){
+     return a * b;
+}
+
+ int main() {
+     int length = 10;
+  int width= 5;
+     int areaOfRectangle = area(length, width);
+    
+    cout << areaOfRectangle;
+ }
+
+//4.4 argument,return type
+#include <iostream>
+using namespace std;
+int currencyConversion(int amountInUSD){
+    return amountInUSD / 100;
+}
+int main(){
+    cout<<currencyConversion(1000);
+    return 0;
+}
+
+//problem 5 
+// function overloading
+
+#include<iostream>
+using namespace std;
+
+int add(int a,int b){
+    return a+b;
+}
+int add(int a,int b,int c){
+    return a+b+c;
+}
+int add(int a,int b, int c,int d){
+    return a+b+c+d;
+}
+double add(double a, double b){
+     return a+b;
+ }
+int main() {
+    cout << add(5,2) << "\n";
+    cout << add(5,2,3) << "\n";
+    cout << add(5,2,3,4) << "\n";
+    cout<< add(5.5,2.0)<<"\n";
+    
+    return 0;
+}
+
+
+//problem 6 
+//Pointers
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int age = 24;
+    int*ptr = &age;
+    
+    cout<<age<<"\n";
+    cout<<ptr<<"\n";
+    cout<<*ptr<<"\n";
+ 
+ //age = 28
+    *ptr = 28;
+    cout<<*ptr;
+    return 0;
+}
+
+//problem 7
+//Addition of 2 numbers using pointers
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a,b;
+    cin>>a;
+    cin>>b;
+    
+    int *ptr1 = &a;
+    int *ptr2 = &b;
+    
+    int sum = *ptr1 + *ptr2;
+    cout<<sum<<endl;
+    
+    return 0;
+}
