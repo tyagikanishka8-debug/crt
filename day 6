@@ -1,0 +1,170 @@
+// problem 1 
+// swapping of values of 2 variables
+
+#include <iostream>
+using namespace std;
+
+void swapNumber(int* x, int* y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+int main(){
+    int a;
+    int b;
+    cin>>a;
+    cin>>b;
+    swapNumber(&a,&b);
+    cout<<a<<" "<<b;
+          
+    return 0;
+}
+
+// problem 2
+// default argument
+
+#include <iostream>
+using namespace std;
+
+int area(int a,int b = 5){
+    return a*b;
+}
+int main(){
+    //cout<<area(10);
+    cout<<area(10,3);
+
+    return 0;
+}
+
+// problem 3 
+//Call by value //call by refrence
+//call by value -- photocopy
+// call by refrence -- original copy(address)
+
+#include <iostream>
+using namespace std;
+
+void updatebyValue(int a){
+    a = 500;
+}
+
+void updatebyRefrence(int &a){
+    a = 500;
+}
+
+int main(){
+    int original = 100;
+    
+    updatebyValue(original);
+    cout<< original<<endl;
+    updatebyRefrence(original);
+    cout<<original;
+
+    return 0;
+}
+
+// problem 4
+//practice problems
+
+#include <iostream>
+using namespace std;
+
+void price(int &a){
+    a = a*100;
+}
+    
+
+int main(){
+    int a;
+    cout<<"number of coffee:"<<endl;
+    cin>>a;
+    price(a);
+    cout<<"total bill:"<<a;
+    
+    
+
+    return 0;
+}
+
+// problem 5
+//smat ac remote
+//function overloading
+//default argument
+
+#include <iostream>
+using namespace std;
+
+void setTemperature(int temp = 22){
+    cout<<"temp set to"<<temp<<"C"<<"\n";
+}
+void setTemperature(double temp){
+    cout<<"temp set to"<<temp<<"C"<<"\n";
+}
+void setTemperature(string mode){
+    if(mode =="Eco"){
+        cout<<"temp set to 24 C"<<"\n";
+    }else if(mode == "TURBO"){
+        cout<<"temp set to 18C"<<"\n";
+    }
+}
+
+int main(){
+    setTemperature(); //default value-- 22
+    setTemperature(20.5);//manually setting the temp 
+    setTemperature("Eco");//set temp to 24
+    setTemperature("TURBO");
+    
+    return 0;
+}
+
+// problem 6 
+//classes and object
+
+#include <iostream>
+using namespace std;
+
+class Student{
+public:
+     string name;
+     int age;
+     
+    void introduce(){
+        cout<<"Hi there, this person name is "<< name<<" and her age is "<<age<<"\n";
+    }
+};
+
+int main(){
+    Student s1,s2;
+    s1.name = "Kanishka";
+    s1.age = 20;
+    s2.name = "kittu";
+    s2.age = 19;
+    s1.introduce();
+    s2.introduce();
+
+    
+    return 0;
+}
+
+
+// practice problm 7
+//access modifier 
+// 7.1 -- PUBLIC
+
+#include <iostream>
+using namespace std;
+
+class PublicPark{
+public:
+     
+    void enter(){
+       cout<<"Anyone can enter in the park...";
+    }
+};
+
+int main(){
+   PublicPark p;
+   p.enter();
+    
+    return 0;
+}
