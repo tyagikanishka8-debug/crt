@@ -1,0 +1,162 @@
+// problem 1 
+//access specifier
+//7.2 --Public
+
+#include <iostream>
+using namespace std;
+
+class BankAccount{
+
+private:
+   int balance = 5000;
+    
+ public:
+ void showBalance(){
+  cout<<"Balance in your acoount is:"<< balance;
+    }
+};
+int main(){
+    BankAccount myaccount;
+    myaccount.showBalance();
+    
+    return 0;
+}
+
+// problem 2 
+//access specifier
+//7.3 --Protected
+
+#include <iostream>
+using namespace std;
+
+class Parent{
+
+protected:
+   int secretCode = 1234;
+};
+class child : public Parent{
+public:
+    void accessOfSecretCode(){
+        cout<<"SecretCode of the locker is "<<secretCode;
+    }
+    
+};
+int main(){
+    child obj1;
+    obj1.accessOfSecretCode();
+    
+    return 0;
+}
+
+// problem 2
+//Constructors
+//Types -- 2.1--default
+//      2.2--
+//       2.3--copy
+
+//2.1--default Constructors
+
+#include <iostream>
+using namespace std;
+
+class wifiConnection{
+public:
+    string networkName;
+    string password;
+    
+    //Constructors
+    wifiConnection(){
+        networkName = "ACTFIBRE";
+        password = "BJPwon";
+    }
+    
+    
+public:
+ void showDetails(){
+     cout<<"network name is "<<networkName<<" and its password is "<<password;
+}
+};
+int main(){
+    wifiConnection obj1;
+    obj1.showDetails();
+    
+    return 0;
+}
+
+//Parameterized constructor 
+
+
+
+class Student{
+public:    
+    string name;
+    int id;
+    
+    //constructor
+    Student(string studentName, int studentID){
+        name = studentName;
+        id = studentID;
+    }
+    
+public:
+void displayDetails(){
+    cout<<name<<id;
+}
+};
+int main(){
+    Student std1("kanishka",101);
+    std1.displayDetails();
+    
+    return 0;
+    
+}
+
+// problem 3
+//Pillar of OOPS
+//Encapsulation
+//encapsulation means we are binding the data into a single unit(functions,data,variables,methods)
+//into a single unit called class and making some restrictions on this class members
+//data security
+//controlled access over my data with the help of access specifier
+//validation before accessing the data
+//code maintainaility
+//
+#include<iostream>
+using namespace std;
+
+class bankAccount{
+private:
+int balance;
+
+public:
+void setbalance(int amount){
+    if(amount >= 0){
+        balance = amount;
+       
+    }else{
+        cout<<"Enter a valid number..";
+    }
+}
+
+public:
+int getbalance(){
+    return balance;
+}
+
+};
+
+int main(){
+    bankAccount obj1;
+    obj1.setbalance(5000);
+    cout<<obj1.getbalance();
+    return 0;
+}
+
+// problem 4
+//Pillar of OOPS
+//Abstraction
+//Abstraction means hiding the implementation details and showing only the necessary / essential
+//features to the users
+//abstract class-- class cannot be initialized and it is formed using the abstract keyword
+//abstract method -- there is no initialization of the abstract method
+
