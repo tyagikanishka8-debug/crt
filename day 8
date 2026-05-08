@@ -1,0 +1,267 @@
+//problem 1 
+//Inheritance
+//types - 1.1 single inheritance
+
+#include <iostream>
+using namespace std;
+
+class Vehicle{
+public:
+    void start(){
+        cout<<"Vehicle Starts"<<endl;
+    }
+};
+class Car : public Vehicle{
+public:
+    void drive(){
+        cout<<"Car is running"<<endl;
+    }
+};
+
+int main(){
+    Car obj1;
+    obj1.drive();
+    obj1.start();
+
+
+    return 0;
+}
+
+//types - 1.2 multilevel inheritance
+
+#include <iostream>
+using namespace std;
+
+class Vehicle{
+public:
+    void start(){
+        cout<<"Vehicle Starts"<<endl;
+    }
+};
+class Car : public Vehicle{
+public:
+    void drive(){
+        cout<<"Car is running"<<endl;
+    }
+};
+class Speedometer : public Car{
+public:
+    void speed(){
+        cout<<"car is running at 60km/h"<<endl;
+    }
+};
+
+int main(){
+    Speedometer obj1;
+    obj1.speed();
+    obj1.drive();
+    obj1.start();
+    return 0;
+}
+
+//types - 1.3 hierarchial inheritance
+
+#include <iostream>
+using namespace std;
+
+class Vehicle{
+public:
+    void start(){
+        cout<<"Vehicle Starts"<<endl;
+    }
+};
+class Car : public Vehicle{
+public:
+    void run(){
+        cout<<"Car is running"<<endl;
+    }
+};
+class Bike : public Vehicle{
+public:
+    void drive(){
+        cout<<"bike is running"<<endl;
+    }
+};
+
+int main(){
+    Car C1;
+    Bike B1;
+    
+    C1.start();
+    C1.run();
+    B1.drive();
+
+
+    return 0;
+}
+
+//types - 1.4 multiple inheritance
+
+#include <iostream>
+using namespace std;
+
+class Parent1{
+public:
+    void giveMeMoney(){
+       cout<<"Mummy paisa do mujhe"<<endl;
+   }
+    
+};
+class Parent2{
+public:
+    void giveMeMoney(){
+        cout<<"papa paisa  do";
+    }
+    
+
+};
+class child : public Parent1, public Parent2{
+
+};
+
+int main(){
+    child obj1;
+    //obj1.giveMeMoney();
+    obj1.Parent1::giveMeMoney();
+    obj1.Parent2::giveMeMoney();
+
+
+    return 0;
+}
+
+
+//types - 1.5 hybrid inheritance
+
+#include <iostream>
+using namespace std;
+
+class A{
+public:
+void print(){
+    cout<<"BJP won";
+}
+};
+
+class B : virtual public A{
+    //NO LOGIC
+};
+
+class C :virtual public A{
+    //NO LOGIC
+};
+
+class D : public B,public C{
+    
+};
+
+int main(){
+     D obj1;
+     obj1.print();
+
+    return 0;
+}
+
+//types of polymorphism--2.1 
+//function overloading
+
+
+
+#include <iostream>
+using namespace std;
+class Math{
+    
+public:
+void add(int a , int b){
+    cout<< a+b<<"/n";
+}
+
+public:
+void add(double a, double b){
+    cout<<a+b<<endl;
+}
+
+
+};
+
+
+int main(){
+   Math m1;
+   m1.add(2,3);
+   m1.add(29,2);
+
+    return 0;
+}
+//problem 2  
+//Polymorphism
+//polymorphism means one name but many forms
+//same function behaves differently depending on the type of the object it called 
+//two types
+//Compile time polymorphism -- function overloding --static
+//resolved at compile time
+//functionn overloads -- same function name, but different parameters
+//faster execution
+// run time polymorphism -- function overriding--dynamic
+//resolved at run time 
+//function runtime -- same function name,same parameters, but different class
+//uses a virtual keyword in the base class
+//achieving this through the concept of inheritance
+//types of polymorphism--2.1 
+//function overriding
+
+
+
+#include <iostream>
+using namespace std;
+class Animal{
+public:
+ virtual void sound(){
+    cout<<"Animal makes sound";
+}
+};
+
+class Dog: public Animal{
+public:
+    void sound() override{
+        cout<<"dog makes a sound"<<endl;
+    }
+};
+
+class Cat: public Animal{
+public:
+    void sound() override {
+        cout<<"Cat makes a souund";
+    }
+};
+
+
+int main(){
+   Dog d;
+   Cat c;
+   d.sound();
+   c.sound();
+   
+      return 0;
+}
+
+#include <iostream>
+using namespace std;
+class Parent{
+public:
+    virtual void sum(int a, int b){
+       cout<<a+b<<"parent";
+       }
+};
+
+class child : public Parent{
+public:
+    void sum(int a, int b)override{
+    cout<<a+b<<"child"; 
+}
+};
+
+int main(){
+   child C;
+   C.sum(10,20);
+   
+  return 0;
+}
